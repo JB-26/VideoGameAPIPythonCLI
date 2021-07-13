@@ -119,7 +119,10 @@ def find_game(access_token):
     })
 
     r = requests.get(f'{apiUrl}/findGame', headers=headers, data=payload)
-    decode_json(r)
+    if r.status_code != 200:
+        print(f'Unable to locate a game with the following search term - {search}')
+    else:
+        decode_json(r)
 
 
 def update_game(access_token):
