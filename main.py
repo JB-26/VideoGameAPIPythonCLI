@@ -80,7 +80,7 @@ def login():
             print('Error with logging in - please try again!')
             pass
         else:
-            # grab access token from response
+            # grab access token from responsew
             json_response = r.json()
             access_token = json_response['access_token']
             return access_token
@@ -186,7 +186,7 @@ def delete_game(access_token):
         json_response = r.json()
         result = json_response.get('The following has been deleted')
         result = result.get('Game')
-        print('New updated entry:')
+        print('The following has been deleted from the database:')
         for x in result:
             print(f'{x} {result[x]}')
 
